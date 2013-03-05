@@ -1,0 +1,11 @@
+#!/bin/bash
+clear
+now=$(date +"%Y%m%d_%H%M")
+# Copy the new modules and new zImage to Anykernel folder.
+cp drivers/net/wireless/bcm4325/wireless.ko ~/android/AnyKernel/system/lib/modules
+cp arch/arm/boot/zImage ~/android/AnyKernel/kernel
+# Creat flashable zip file
+cd ~/android/AnyKernel
+zip -r kernel-${now}.zip *
+# Drop it to release folder
+mv ~/android/AnyKernel/kernel-${now}.zip ~/android/releasefolder

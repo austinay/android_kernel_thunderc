@@ -603,4 +603,18 @@ config TOUCHSCREEN_CY8C_TS
 	  To compile this driver as a module, choose M here: the
 	  module will be called cy8c_ts.
 
+config TOUCHSCREEN_OPTIMIZED_MCS6000
+	default n
+	tristate "Optimized MCS6000 touchscreens"
+	depends on I2C
+	help
+	  Say Y here if you have a MCS6000 touchscreen.
+	  This is MCS6000 touchscreen with optimizations
+	  and patches.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called tsc2007.
+
 endif
